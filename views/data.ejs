@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient and Provider Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <h1 class="text-center">Patient and Provider Data</h1>
+
+  <h2>Patients</h2>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Patient ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% patients.forEach(patient => { %>
+        <tr>
+          <td><%= patient.patient_id %></td>
+          <td><%= patient.first_name %></td>
+          <td><%= patient.last_name %></td>
+          <td><%= patient.date_of_birth %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <h2>Providers</h2>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Provider Specialty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% providers.forEach(provider => { %>
+        <tr>
+          <td><%= provider.first_name %></td>
+          <td><%= provider.last_name %></td>
+          <td><%= provider.provider_specialty %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <h2>Patient List</h2>
+  <ul class="list-group">
+    <% patients.forEach(patient => { %>
+      <li class="list-group-item">
+        <%= patient.first_name %> 
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Provider List</h2>
+  <ul class="list-group">
+    <% providers.forEach(provider => { %>
+      <li class="list-group-item">
+        <%= provider.first_name  %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
